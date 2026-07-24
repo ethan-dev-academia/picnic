@@ -1,0 +1,200 @@
+[
+  {
+    "id": "main",
+    "name": "Main Hub — Lindley Meadow Picnic Tables",
+    "main": true,
+    "capacity": 100,
+    "lat": 37.7701,
+    "lng": -122.4895,
+    "description": "Central reserved hub where groups cycle through: a broad sunken meadow with 12 reservable picnic sites (tables + BBQ grills) on the south side of JFK Drive between 30th Ave and Spreckels Lake, easily handling 100 people."
+  },
+  {
+    "id": "loc-01",
+    "name": "Little Rec Field Lawn",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7678,
+    "lng": -122.4560,
+    "description": "Small grassy ballfield lawn off Kezar Drive at the park's far east end, steps from the Stanyan Street entrance — flat open turf that comfortably fits a 50-person spread when no games are on."
+  },
+  {
+    "id": "loc-02",
+    "name": "Hippie Hill",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7697,
+    "lng": -122.4568,
+    "description": "Famous sunny grass slope above Robin Williams Meadow near the Haight/Stanyan entrance; lively drum-circle vibe with plenty of hillside room for a large blanket picnic."
+  },
+  {
+    "id": "loc-03",
+    "name": "Robin Williams Meadow",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7692,
+    "lng": -122.4582,
+    "description": "Broad flat meadow (formerly Sharon Meadow) beside the historic Sharon Building and Koret Children's Playground on Bowling Green Drive — a classic large-gathering lawn ideal for ~50 people."
+  },
+  {
+    "id": "loc-04",
+    "name": "Peacock Meadow",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7718,
+    "lng": -122.4587,
+    "description": "Gentle open meadow at 240 JFK Drive near the Fulton/Stanyan corner, known for seasonal light installations and rhododendrons; easy east-entrance access for a mid-size group."
+  },
+  {
+    "id": "loc-05",
+    "name": "Conservatory Valley Lawn",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7722,
+    "lng": -122.4606,
+    "description": "Manicured front lawn below the Conservatory of Flowers along the car-free JFK Promenade — postcard views and flat grass with room for a 50-person picnic."
+  },
+  {
+    "id": "loc-06",
+    "name": "National AIDS Memorial Grove Lawn",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7700,
+    "lng": -122.4614,
+    "description": "Quiet, sheltered dell with lawn clearings (Dogwood Crescent) off Bowling Green Drive near Middle Drive East; shady and contemplative — suits a calmer 50-person group."
+  },
+  {
+    "id": "loc-07",
+    "name": "Big Rec Lawn",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7664,
+    "lng": -122.4643,
+    "description": "Expansive turf around the historic Big Rec ballfields near 7th Ave & Lincoln Way on the park's south edge — huge flat grass area, great overflow space for 50 when diamonds are free."
+  },
+  {
+    "id": "loc-08",
+    "name": "Rose Garden Lawn",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7720,
+    "lng": -122.4712,
+    "description": "Lawn panels around the formal Rose Garden between JFK Drive and Fulton Street near Park Presidio Blvd — fragrant, sunny, and close to a Fulton entrance for easy drop-off."
+  },
+  {
+    "id": "loc-09",
+    "name": "Mothers' Meadow",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7668,
+    "lng": -122.4738,
+    "description": "Expansive family-friendly meadow at 573 MLK Jr. Drive just east of the 19th Ave/Crossover crossing, with playground and restroom nearby — well suited to groups with kids."
+  },
+  {
+    "id": "loc-10",
+    "name": "Stow Lake Boathouse Picnic Area",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7713,
+    "lng": -122.4762,
+    "description": "Lakeside tables and lawn by the Stow Lake Boathouse (paddle-boat rentals, snack bar); scenic water views with Strawberry Hill behind — fits ~50 spread along the shore lawn."
+  },
+  {
+    "id": "loc-11",
+    "name": "Pioneer Log Cabin Meadow",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7704,
+    "lng": -122.4772,
+    "description": "Reservable picnic tables and grills on the meadow fronting the 1911 Pioneer Log Cabin on Stow Lake Drive, just west of Stow Lake — sheltered clearing sized well for one 50-person group."
+  },
+  {
+    "id": "loc-12",
+    "name": "Marx Meadow",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7721,
+    "lng": -122.4793,
+    "description": "Reservable picnic meadow north of JFK Drive just west of the Park Presidio crossover, home of the park's disc-golf course; tables, grills, and open grass for ~50."
+  },
+  {
+    "id": "loc-13",
+    "name": "Hellman Hollow (Speedway Meadow)",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7693,
+    "lng": -122.4834,
+    "description": "The park's classic big-event meadow (Hardly Strictly Bluegrass site) at 880 JFK Drive with nine reservable picnic sites — vast flat grass that swallows a 50-person group easily."
+  },
+  {
+    "id": "loc-14",
+    "name": "Elk Glen Picnic Area",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7663,
+    "lng": -122.4846,
+    "description": "Meadow with four picnic tables and BBQ grills on the north side of MLK Jr. Drive west of 25th Ave, across from Mallard Lake and beside Elk Glen Lake — quiet south-side option for 50."
+  },
+  {
+    "id": "loc-15",
+    "name": "Polo Field Lawns",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7680,
+    "lng": -122.4926,
+    "description": "Enormous open turf of the Polo Field (Golden Gate Park Stadium) off Middle Drive West — when events aren't scheduled, its perimeter lawns offer effectively unlimited space for 50."
+  },
+  {
+    "id": "loc-16",
+    "name": "Spreckels Lake Lawn",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7707,
+    "lng": -122.4936,
+    "description": "Grassy shoreline around Spreckels Lake at 36th Ave & Fulton, where the Model Yacht Club sails; cypress shade, benches, and lawn space for a 50-person picnic."
+  },
+  {
+    "id": "loc-17",
+    "name": "Metson Lake Meadow",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7663,
+    "lng": -122.4950,
+    "description": "Low-traffic lakeside clearing near Middle Drive West and Metson Road, south of the Polo Field — shady stream, pretty scenery, and enough lawn for a quieter 50-person group."
+  },
+  {
+    "id": "loc-18",
+    "name": "Bercut Equitation Field",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7686,
+    "lng": -122.4985,
+    "description": "Large open grass field west of the Polo Field near JFK Drive at 39th Ave, originally a horse-training ring — a spacious, uncrowded lawn that easily holds 50."
+  },
+  {
+    "id": "loc-19",
+    "name": "North Lake Picnic Area (Chain of Lakes)",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7700,
+    "lng": -122.5010,
+    "description": "Lawn and table clearings beside North Lake on Chain of Lakes Drive near JFK and 43rd Ave — tree-ringed lakeside setting on the park's quiet west end, fine for 50."
+  },
+  {
+    "id": "loc-20",
+    "name": "Archery Field Lawn",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7692,
+    "lng": -122.5058,
+    "description": "Wide grass field near 47th Ave and Fulton used by archers at its hay-bale end; the remaining lawn is roomy for 50 — keep clear of the marked shooting lanes."
+  },
+  {
+    "id": "loc-21",
+    "name": "Queen Wilhelmina Tulip Garden Lawn",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7714,
+    "lng": -122.5083,
+    "description": "Lawn beside the Dutch Windmill and tulip beds at the park's northwest corner (Great Highway & Fulton), a short walk from Ocean Beach — scenic but breezy; bring layers for 50."
+  }
+]

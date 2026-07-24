@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Picnic Map — Golden Gate Park</title>
+
+  <!-- Leaflet 1.9.4 (unpkg CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
+
+  <link rel="stylesheet" href="assets/map.css">
+</head>
+<body>
+  <header class="map-header">
+    <a class="back-link" href="index.html">&larr; Guest lookup</a>
+    <h1>Picnic Map <span class="subtitle">Golden Gate Park</span></h1>
+    <button id="sidebar-toggle" class="sidebar-toggle" type="button"
+            aria-expanded="true" aria-controls="sidebar">
+      Locations
+    </button>
+  </header>
+
+  <div id="notice" class="notice" hidden></div>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar" aria-label="Picnic locations">
+      <h2 class="sidebar-title">Locations</h2>
+      <ul id="location-list" class="location-list">
+        <li class="location-empty">Loading locations&hellip;</li>
+      </ul>
+    </aside>
+    <main id="map" class="map" role="application" aria-label="Map of picnic locations"></main>
+  </div>
+
+  <!-- Data (plain globals; page degrades gracefully if any are missing) -->
+  <script src="data/locations.data.js"></script>
+  <script src="data/groups.data.js"></script>
+  <script src="data/assignments.data.js"></script>
+
+  <script src="assets/map.js"></script>
+</body>
+</html>

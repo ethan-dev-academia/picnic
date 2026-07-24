@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>2nd Annual YCombinator Startup School Picnic</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%BA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-brand" href="./index.html">
+        <span class="nav-brand-mark" aria-hidden="true">🧺</span>
+        <span>Startup School Picnic</span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="#find">Find Your Group</a>
+        <a class="nav-link" href="#groups">Groups</a>
+        <a class="nav-link nav-link-map" href="./map.html">Park Map <span aria-hidden="true">→</span></a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <p class="hero-kicker">You're invited</p>
+      <h1 class="hero-title">2nd Annual YCombinator<br>Startup School Picnic</h1>
+      <p class="hero-subtitle">Saturday · Golden Gate Park, San Francisco</p>
+      <div class="stat-chips" role="list">
+        <span class="chip" role="listitem"><strong id="stat-guests">1,126</strong> guests</span>
+        <span class="chip" role="listitem"><strong id="stat-groups">23</strong> groups</span>
+        <span class="chip" role="listitem"><strong id="stat-locations">22</strong> park locations</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Guest lookup -->
+    <section class="section section-find" id="find" aria-labelledby="find-heading">
+      <h2 class="section-title" id="find-heading">Find your picnic spot</h2>
+      <p class="section-lede">Type your name to see which group you're in and where to meet.</p>
+
+      <div class="search-wrap">
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+          </span>
+          <input
+            id="guest-search"
+            class="search-input"
+            type="search"
+            placeholder="Search your name…"
+            autocomplete="off"
+            spellcheck="false"
+            role="combobox"
+            aria-expanded="false"
+            aria-controls="search-results"
+            aria-autocomplete="list"
+            aria-label="Search guest names">
+        </div>
+        <ul class="search-results" id="search-results" role="listbox" aria-label="Matching guests" hidden></ul>
+      </div>
+
+      <div class="guest-card-slot" id="guest-card-slot" aria-live="polite"></div>
+    </section>
+
+    <!-- Groups browser -->
+    <section class="section" id="groups" aria-labelledby="groups-heading">
+      <div class="section-head-row">
+        <div>
+          <h2 class="section-title" id="groups-heading">Browse the groups</h2>
+          <p class="section-lede">23 groups, each with its own corner of the park.</p>
+        </div>
+      </div>
+      <div class="groups-grid" id="groups-grid"></div>
+    </section>
+  </main>
+
+  <!-- Group roster modal -->
+  <div class="modal-overlay" id="group-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Close">&times;</button>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p class="footer-note">Questions? Find an organizer at the Main Picnic Area.</p>
+    <p class="footer-fine">2nd Annual YCombinator Startup School Picnic · Golden Gate Park, San Francisco</p>
+  </footer>
+
+  <!-- Data files (generated separately; page degrades gracefully if absent) -->
+  <script src="./data/groups.data.js"></script>
+  <script src="./data/locations.data.js"></script>
+  <script src="./data/assignments.data.js"></script>
+  <script src="./assets/app.js"></script>
+</body>
+</html>
