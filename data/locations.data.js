@@ -6,7 +6,7 @@ window.PICNIC_LOCATIONS = [
     "capacity": 100,
     "lat": 37.7701,
     "lng": -122.4895,
-    "description": "Central reserved hub where groups cycle through: a broad sunken meadow with 12 reservable picnic sites (tables + BBQ grills) on the south side of JFK Drive between 30th Ave and Spreckels Lake, easily handling 100 people."
+    "description": "Central reserved hub where groups cycle through: a broad sunken meadow with 12 reservable picnic sites (tables + BBQ grills) on the south side of JFK Drive between 30th Ave and Spreckels Lake, easily handling 100 people. Come here any time for help and support from organizers, or drop in to use it as a general networking space open to all groups."
   },
   {
     "id": "loc-01",

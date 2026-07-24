@@ -170,10 +170,27 @@
     wheelDebounceTime: 60
   }).setView(PARK_CENTER, PARK_ZOOM);
 
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  var streetLayer = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+  });
+
+  var satelliteLayer = L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    {
+      maxZoom: 19,
+      attribution: "Imagery &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics"
+    }
+  );
+
+  // Satellite photos by default so guests can see the actual meadows;
+  // street map available via the layer switcher (top-right).
+  satelliteLayer.addTo(map);
+  L.control.layers(
+    { "Satellite": satelliteLayer, "Street map": streetLayer },
+    null,
+    { position: "topright", collapsed: false }
+  ).addTo(map);
 
   function makeIcon(isMain) {
     var size = isMain ? 26 : 16;
