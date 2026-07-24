@@ -1,8 +1,9 @@
-// Group id -> location id. Groups 1-2 share the Main Picnic Area (capacity 100);
-// groups 3-23 map to satellite spots loc-01..loc-21.
+// Group id -> location id. Every group has its own satellite spot; the Main
+// Hub (Lindley Meadow, capacity 100) hosts no group — it's the shared center
+// for help/support, networking, and the group cycle space.
 window.PICNIC_ASSIGNMENTS = {
-  "1": "main",
-  "2": "main",
+  "1": "loc-22",
+  "2": "loc-23",
   "3": "loc-01",
   "4": "loc-02",
   "5": "loc-03",

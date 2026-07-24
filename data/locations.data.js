@@ -196,5 +196,23 @@ window.PICNIC_LOCATIONS = [
     "lat": 37.7714,
     "lng": -122.5083,
     "description": "Lawn beside the Dutch Windmill and tulip beds at the park's northwest corner (Great Highway & Fulton), a short walk from Ocean Beach — scenic but breezy; bring layers for 50."
+  },
+  {
+    "id": "loc-22",
+    "name": "Doughboy Meadow",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7718,
+    "lng": -122.4630,
+    "description": "Sheltered meadow just west of the Conservatory of Flowers and Rhododendron Dell off JFK Drive — quiet east-end lawn with tree cover, comfortable for a 50-person group."
+  },
+  {
+    "id": "loc-23",
+    "name": "Music Concourse Lawns",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7699,
+    "lng": -122.4686,
+    "description": "Landmark plaza lawns between the de Young Museum and the California Academy of Sciences, with the Spreckels bandshell, fountains, and pollarded trees — easy to find and fits 50."
   }
 ];

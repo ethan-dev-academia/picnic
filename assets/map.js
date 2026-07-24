@@ -72,9 +72,16 @@
   if (isMobile()) setSidebarCollapsed(true);
 
   // ── Text helpers ───────────────────────────────────────────────────
+  var MAIN_OPEN_TEXT = "Open to all groups — help desk, networking & cycle space";
+
+  function isMainLoc(locId) {
+    var loc = locations.find ? locations.find(function (l) { return l.id === locId; }) : null;
+    return !!(loc && loc.main);
+  }
+
   function groupSummary(locId) {
     var assigned = groupsByLocation[locId] || [];
-    if (!assigned.length) return "No groups assigned";
+    if (!assigned.length) return isMainLoc(locId) ? MAIN_OPEN_TEXT : "No groups assigned";
     return assigned.map(function (g) {
       return g.name + (g.size != null ? " (" + g.size + ")" : "");
     }).join(", ");
@@ -92,7 +99,7 @@
       ? assigned.map(function (g) {
           return esc(g.name) + (g.size != null ? " &middot; " + g.size + " people" : "");
         }).join("<br>")
-      : "No groups assigned";
+      : (loc.main ? MAIN_OPEN_TEXT : "No groups assigned");
     return (
       '<h3 class="popup-title">' + esc(loc.name) + (loc.main ? " ★" : "") + "</h3>" +
       (loc.description ? '<p class="popup-desc">' + esc(loc.description) + "</p>" : "") +

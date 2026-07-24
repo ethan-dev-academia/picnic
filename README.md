@@ -9,8 +9,8 @@ Static site for the 2nd Annual YCombinator Startup School Picnic in Golden Gate 
 
 ## Layout
 
-- **Main Hub — Lindley Meadow Picnic Tables** (capacity 100): Groups 1–2 (98 people), the cycle space.
-- **21 satellite spots** (Hippie Hill, Robin Williams Meadow, Marx Meadow, Hellman Hollow, Elk Glen, …): one group of 49 each, ordered east-to-west.
+- **Main Hub — Lindley Meadow Picnic Tables** (capacity 100): no group lives here — it's the shared center for help/support, cross-group networking, and the 100-person cycle space.
+- **23 satellite spots** (Hippie Hill, Robin Williams Meadow, Music Concourse, Marx Meadow, Hellman Hollow, Elk Glen, …): one group each.
 
 ## Data
 

@@ -478,6 +478,55 @@ a { color: var(--green); }
   .group-card-loc { color: var(--green); }
 }
 
+/* ---------- Main Hub callout ---------- */
+
+.hub-note {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem auto 0;
+  max-width: 42rem;
+  padding: 1rem 1.25rem;
+  background: var(--accent-warm-tint);
+  border: 1px solid var(--accent-warm);
+  border-radius: var(--radius);
+}
+
+.hub-note-icon { font-size: 1.5rem; }
+
+.hub-note-title {
+  margin: 0 0 0.2rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.hub-note-text {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.hub-note-link {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-weight: 600;
+  color: var(--green-deep);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.hub-note-link:hover { text-decoration: underline; }
+
+@media (max-width: 560px) {
+  .hub-note { flex-wrap: wrap; }
+  .hub-note-link { margin-left: 2.5rem; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .hub-note { background: rgba(199, 123, 63, 0.14); border-color: rgba(199, 123, 63, 0.5); }
+  .hub-note-link { color: var(--green); }
+}
+
 /* ---------- Modal ---------- */
 
 .modal-overlay {

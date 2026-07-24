@@ -14,7 +14,7 @@
     "main": false,
     "capacity": 49,
     "lat": 37.7678,
-    "lng": -122.4560,
+    "lng": -122.456,
     "description": "Small grassy ballfield lawn off Kezar Drive at the park's far east end, steps from the Stanyan Street entrance — flat open turf that comfortably fits a 50-person spread when no games are on."
   },
   {
@@ -58,7 +58,7 @@
     "name": "National AIDS Memorial Grove Lawn",
     "main": false,
     "capacity": 49,
-    "lat": 37.7700,
+    "lat": 37.77,
     "lng": -122.4614,
     "description": "Quiet, sheltered dell with lawn clearings (Dogwood Crescent) off Bowling Green Drive near Middle Drive East; shady and contemplative — suits a calmer 50-person group."
   },
@@ -76,7 +76,7 @@
     "name": "Rose Garden Lawn",
     "main": false,
     "capacity": 49,
-    "lat": 37.7720,
+    "lat": 37.772,
     "lng": -122.4712,
     "description": "Lawn panels around the formal Rose Garden between JFK Drive and Fulton Street near Park Presidio Blvd — fragrant, sunny, and close to a Fulton entrance for easy drop-off."
   },
@@ -139,7 +139,7 @@
     "name": "Polo Field Lawns",
     "main": false,
     "capacity": 49,
-    "lat": 37.7680,
+    "lat": 37.768,
     "lng": -122.4926,
     "description": "Enormous open turf of the Polo Field (Golden Gate Park Stadium) off Middle Drive West — when events aren't scheduled, its perimeter lawns offer effectively unlimited space for 50."
   },
@@ -158,7 +158,7 @@
     "main": false,
     "capacity": 49,
     "lat": 37.7663,
-    "lng": -122.4950,
+    "lng": -122.495,
     "description": "Low-traffic lakeside clearing near Middle Drive West and Metson Road, south of the Polo Field — shady stream, pretty scenery, and enough lawn for a quieter 50-person group."
   },
   {
@@ -175,8 +175,8 @@
     "name": "North Lake Picnic Area (Chain of Lakes)",
     "main": false,
     "capacity": 49,
-    "lat": 37.7700,
-    "lng": -122.5010,
+    "lat": 37.77,
+    "lng": -122.501,
     "description": "Lawn and table clearings beside North Lake on Chain of Lakes Drive near JFK and 43rd Ave — tree-ringed lakeside setting on the park's quiet west end, fine for 50."
   },
   {
@@ -196,5 +196,23 @@
     "lat": 37.7714,
     "lng": -122.5083,
     "description": "Lawn beside the Dutch Windmill and tulip beds at the park's northwest corner (Great Highway & Fulton), a short walk from Ocean Beach — scenic but breezy; bring layers for 50."
+  },
+  {
+    "id": "loc-22",
+    "name": "Doughboy Meadow",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7718,
+    "lng": -122.463,
+    "description": "Sheltered meadow just west of the Conservatory of Flowers and Rhododendron Dell off JFK Drive — quiet east-end lawn with tree cover, comfortable for a 50-person group."
+  },
+  {
+    "id": "loc-23",
+    "name": "Music Concourse Lawns",
+    "main": false,
+    "capacity": 49,
+    "lat": 37.7699,
+    "lng": -122.4686,
+    "description": "Landmark plaza lawns between the de Young Museum and the California Academy of Sciences, with the Spreckels bandshell, fountains, and pollarded trees — easy to find and fits 50."
   }
 ]
