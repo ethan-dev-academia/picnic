@@ -160,7 +160,15 @@
   }
 
   // ── Map ────────────────────────────────────────────────────────────
-  var map = L.map(mapEl, { zoomControl: true }).setView(PARK_CENTER, PARK_ZOOM);
+  var map = L.map(mapEl, {
+    zoomControl: true,
+    // Gentler scroll-wheel zoom: quarter-level steps and ~3x more scroll
+    // distance per zoom level than Leaflet's defaults.
+    zoomSnap: 0.25,
+    zoomDelta: 0.5,
+    wheelPxPerZoomLevel: 180,
+    wheelDebounceTime: 60
+  }).setView(PARK_CENTER, PARK_ZOOM);
 
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
