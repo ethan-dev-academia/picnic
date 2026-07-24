@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Picnic Map — Golden Gate Park</title>
+  <title>Park map &mdash; Golden Gate Park</title>
+
+  <!-- Type: Fraunces for display, Inter for UI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap">
 
   <!-- Leaflet 1.9.4 (unpkg CDN) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -18,11 +24,14 @@
 </head>
 <body>
   <header class="map-header">
+    <div class="header-title">
+      <h1>Park map</h1>
+      <p class="header-sub">Golden Gate Park</p>
+    </div>
     <a class="back-link" href="index.html">&larr; Guest lookup</a>
-    <h1>Picnic Map <span class="subtitle">Golden Gate Park</span></h1>
     <button id="sidebar-toggle" class="sidebar-toggle" type="button"
             aria-expanded="true" aria-controls="sidebar">
-      Locations
+      Index
     </button>
   </header>
 
@@ -30,7 +39,7 @@
 
   <div class="layout">
     <aside id="sidebar" class="sidebar" aria-label="Picnic locations">
-      <h2 class="sidebar-title">Locations</h2>
+      <h2 class="sidebar-title">Location index</h2>
       <ul id="location-list" class="location-list">
         <li class="location-empty">Loading locations&hellip;</li>
       </ul>

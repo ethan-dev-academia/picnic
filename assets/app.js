@@ -228,31 +228,28 @@
     var locBlock;
     if (loc) {
       locBlock =
-        '<div class="guest-card-loc">' +
         '<p class="guest-card-loc-label">You’re at</p>' +
         '<h3 class="guest-card-loc-name">' + esc(loc.name) + "</h3>" +
-        (loc.description ? '<p class="guest-card-loc-desc">' + esc(loc.description) + "</p>" : "") +
-        "</div>";
+        (loc.description ? '<p class="guest-card-loc-desc">' + esc(loc.description) + "</p>" : "");
     } else {
       locBlock =
-        '<div class="guest-card-loc">' +
         '<p class="guest-card-loc-label">You’re at</p>' +
         '<h3 class="guest-card-loc-name">Location coming soon</h3>' +
-        '<p class="guest-card-loc-desc">Location assignments haven’t been generated yet — check back soon.</p>' +
-        "</div>";
+        '<p class="guest-card-loc-desc">Location assignments haven’t been generated yet — check back soon.</p>';
     }
 
     cardSlot.innerHTML =
       '<article class="guest-card">' +
-      '<p class="guest-card-name">' + esc(entry.name) + "</p>" +
+      '<p class="guest-card-name"><strong>' + esc(entry.name) + "</strong> · " + esc(groupLabel) +
+      " · " + fmt(group.size || (group.members || []).length) + " guests</p>" +
       locBlock +
       '<div class="guest-card-actions">' +
       (loc
-        ? '<a class="btn btn-primary" href="./map.html?loc=' + encodeURIComponent(loc.id) + '">View on map</a>'
+        ? '<a class="action" href="./map.html?loc=' + encodeURIComponent(loc.id) +
+          '">View on map <span aria-hidden="true">&rarr;</span></a>'
         : "") +
-      '<button type="button" class="btn btn-secondary" data-open-group="' + esc(group.id) + '">See full group</button>' +
+      '<button type="button" class="action" data-open-group="' + esc(group.id) + '">See full group</button>' +
       "</div>" +
-      '<p class="guest-card-group">' + esc(groupLabel) + " · " + fmt(group.size || (group.members || []).length) + " guests</p>" +
       "</article>";
 
     var btn = cardSlot.querySelector("[data-open-group]");
@@ -324,12 +321,17 @@
       .map(function (group) {
         var loc = locationForGroup(group.id);
         var size = group.size || (group.members || []).length;
+        var label = group.name || "Group " + group.id;
+        var num = String(group.id);
+        if (num.length === 1) num = "0" + num;
         return (
-          '<button type="button" class="group-card" data-group-id="' + esc(group.id) + '">' +
-          '<h3 class="group-card-name">' + esc(group.name || "Group " + group.id) + "</h3>" +
-          '<p class="group-card-size">' + fmt(size) + " guests</p>" +
-          '<p class="group-card-loc"><span aria-hidden="true">📍</span> ' +
-          esc(loc ? loc.name : "Location TBA") + "</p>" +
+          '<button type="button" class="group-card" data-group-id="' + esc(group.id) +
+          '" aria-label="' + esc(label + " — " + (loc ? loc.name : "Location TBA") + ", " + fmt(size) + " guests") + '">' +
+          '<span class="group-card-num" aria-hidden="true">' + esc(num) + "</span>" +
+          '<span class="group-card-body" aria-hidden="true">' +
+          '<span class="group-card-loc">' + esc(loc ? loc.name : "Location TBA") + "</span>" +
+          '<span class="group-card-size">' + fmt(size) + " guests</span>" +
+          "</span>" +
           "</button>"
         );
       })
@@ -377,7 +379,8 @@
       ? '<div class="modal-loc">' +
         '<p class="modal-loc-name">' + esc(loc.name) + "</p>" +
         (loc.description ? '<p class="modal-loc-desc">' + esc(loc.description) + "</p>" : "") +
-        '<a class="btn btn-primary" href="./map.html?loc=' + encodeURIComponent(loc.id) + '">View on map</a>' +
+        '<a class="action" href="./map.html?loc=' + encodeURIComponent(loc.id) +
+        '">View on map <span aria-hidden="true">&rarr;</span></a>' +
         "</div>"
       : '<div class="modal-loc"><p class="modal-loc-desc">Location assignment coming soon.</p></div>';
 

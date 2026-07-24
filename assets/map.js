@@ -40,6 +40,21 @@
     groupsByLocation[locId].sort(function (a, b) { return Number(a.id) - Number(b.id); });
   });
 
+  // Display order: Main Hub first, then satellites alphabetically.
+  // Satellites get index numbers shared by the sidebar list and the
+  // map markers so the legend and the map read together.
+  var sortedLocations = locations.slice().sort(function (a, b) {
+    if (!!b.main !== !!a.main) return b.main ? 1 : -1;  // main first
+    return String(a.name).localeCompare(String(b.name));
+  });
+  var numberByLocation = {};
+  (function () {
+    var n = 0;
+    sortedLocations.forEach(function (loc) {
+      if (!loc.main) { n += 1; numberByLocation[loc.id] = n; }
+    });
+  })();
+
   // ── DOM refs ───────────────────────────────────────────────────────
   var noticeEl = document.getElementById("notice");
   var listEl = document.getElementById("location-list");
@@ -99,12 +114,18 @@
       ? assigned.map(function (g) {
           return esc(g.name) + (g.size != null ? " &middot; " + g.size + " people" : "");
         }).join("<br>")
-      : (loc.main ? MAIN_OPEN_TEXT : "No groups assigned");
+      : (loc.main ? esc(MAIN_OPEN_TEXT) : "No groups assigned");
+    var kicker = loc.main
+      ? '<p class="popup-kicker popup-kicker-main">Main hub &middot; Open to all</p>'
+      : '<p class="popup-kicker">Site ' + (numberByLocation[loc.id] || "") + "</p>";
     return (
-      '<h3 class="popup-title">' + esc(loc.name) + (loc.main ? " ★" : "") + "</h3>" +
+      kicker +
+      '<h3 class="popup-title">' + esc(loc.name) + "</h3>" +
       (loc.description ? '<p class="popup-desc">' + esc(loc.description) + "</p>" : "") +
-      '<p class="popup-row"><strong>Capacity:</strong> ' + esc(loc.capacity) + "</p>" +
-      '<p class="popup-row"><strong>Assigned:</strong><br>' + groupsLine + "</p>"
+      '<div class="popup-rows">' +
+        '<p class="popup-row"><span class="popup-label">Capacity</span>' + esc(loc.capacity) + "</p>" +
+        '<p class="popup-row"><span class="popup-label">Assigned</span><br>' + groupsLine + "</p>" +
+      "</div>"
     );
   }
 
@@ -119,21 +140,27 @@
       listEl.appendChild(li);
       return;
     }
-    var sorted = locations.slice().sort(function (a, b) {
-      if (!!b.main !== !!a.main) return b.main ? 1 : -1;  // main first
-      return String(a.name).localeCompare(String(b.name));
-    });
-    sorted.forEach(function (loc) {
+    sortedLocations.forEach(function (loc) {
       var li = document.createElement("li");
       var btn = document.createElement("button");
       btn.type = "button";
-      btn.className = "location-card" + (loc.main ? " is-main" : "");
+      btn.className = "loc-row" + (loc.main ? " loc-row-main" : "");
       btn.dataset.locId = loc.id;
-      btn.innerHTML =
-        '<span class="loc-name">' + esc(loc.name) +
-          (loc.main ? ' <span class="badge-main">Main</span>' : "") + "</span>" +
-        '<div class="loc-groups">' + esc(groupSummary(loc.id)) + "</div>" +
-        '<div class="loc-meta">Capacity ' + esc(loc.capacity) + "</div>";
+      if (loc.main) {
+        btn.innerHTML =
+          '<span class="loc-kicker">Main hub &middot; Open to all</span>' +
+          '<span class="loc-name">' + esc(loc.name) + "</span>" +
+          '<span class="loc-sub">' + esc(MAIN_OPEN_TEXT) + "</span>" +
+          '<span class="loc-sub">Capacity ' + esc(loc.capacity) + "</span>";
+      } else {
+        btn.innerHTML =
+          '<span class="loc-num" aria-hidden="true">' + numberByLocation[loc.id] + "</span>" +
+          '<span class="loc-body">' +
+            '<span class="loc-name">' + esc(loc.name) + "</span>" +
+            '<span class="loc-sub">' + esc(groupSummary(loc.id)) +
+              " &middot; Capacity " + esc(loc.capacity) + "</span>" +
+          "</span>";
+      }
       if (onSelect) {
         btn.addEventListener("click", function () { onSelect(loc); });
       }
@@ -144,7 +171,7 @@
 
   function highlightCard(locId) {
     if (!listEl) return;
-    Array.prototype.forEach.call(listEl.querySelectorAll(".location-card"), function (el) {
+    Array.prototype.forEach.call(listEl.querySelectorAll(".loc-row"), function (el) {
       el.classList.toggle("is-active", el.dataset.locId === locId);
     });
   }
@@ -199,14 +226,24 @@
     { position: "topright", collapsed: false }
   ).addTo(map);
 
-  function makeIcon(isMain) {
-    var size = isMain ? 26 : 16;
+  function makeIcon(loc) {
+    if (loc.main) {
+      // Larger clay pin for the Main Hub.
+      return L.divIcon({
+        className: "pin pin-hub",
+        html: '<span class="pin-hub-dot"></span>',
+        iconSize: [32, 32],
+        iconAnchor: [16, 16],
+        popupAnchor: [0, -18]
+      });
+    }
+    // Pine dot carrying the same number as the sidebar index.
     return L.divIcon({
-      className: "picnic-pin" + (isMain ? " pin-main" : ""),
-      html: '<div class="pin-dot"></div>',
-      iconSize: [size, size],
-      iconAnchor: [size / 2, size / 2],
-      popupAnchor: [0, -size / 2 - 2]
+      className: "pin pin-site",
+      html: '<span class="pin-num">' + (numberByLocation[loc.id] || "&middot;") + "</span>",
+      iconSize: [24, 24],
+      iconAnchor: [12, 12],
+      popupAnchor: [0, -14]
     });
   }
 
@@ -214,7 +251,7 @@
   locations.forEach(function (loc) {
     if (typeof loc.lat !== "number" || typeof loc.lng !== "number") return;
     var marker = L.marker([loc.lat, loc.lng], {
-      icon: makeIcon(!!loc.main),
+      icon: makeIcon(loc),
       title: loc.name,
       zIndexOffset: loc.main ? 1000 : 0
     }).addTo(map);
