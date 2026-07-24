@@ -3,6 +3,10 @@
    Warm picnic palette: greens & creams, light + dark schemes.
    ============================================================ */
 
+/* The hidden attribute must always win, even over display rules like
+   .modal-overlay's display:flex — otherwise the empty modal shows on load. */
+[hidden] { display: none !important; }
+
 :root {
   --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
                 "Helvetica Neue", Arial, sans-serif;
